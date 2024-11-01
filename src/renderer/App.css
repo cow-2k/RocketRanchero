@@ -2,61 +2,45 @@
  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
  *        See https://github.com/webpack-contrib/sass-loader#imports
  */
-body {
-  position: relative;
+
+ body {
+  background-color: black;
+ }
+
+.header-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40px; /* You can adjust this height */
+  background-color: #333; /* Adjust the background color as needed */
   color: white;
-  height: 100vh;
-  background: linear-gradient(
-    200.96deg,
-    #fedc2a -29.09%,
-    #dd5789 51.77%,
-    #7a2c9e 129.35%
-  );
-  font-family: sans-serif;
-  overflow-y: hidden;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around; /* Distribute buttons evenly */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it stays on top of other elements */
+  -webkit-user-select: none;
+  user-select: none; 
+  -webkit-app-region: drag;
+}
+.header-bar > * {
+  user-select: text;
+  -webkit-user-select: text;
+  -webkit-app-region: no-drag; 
 }
 
-button {
-  background-color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
+.header-button {
+  background: none;
   border: none;
-  appearance: none;
-  font-size: 1.3rem;
-  box-shadow: 0px 8px 28px -6px rgba(24, 39, 75, 0.12),
-    0px 18px 88px -4px rgba(24, 39, 75, 0.14);
-  transition: all ease-in 0.1s;
+  color: white;
+  font-size: 16px; /* Adjust font size */
   cursor: pointer;
-  opacity: 0.9;
+  padding: 10px 20px; /* Add some padding */
+  transition: background-color 0.3s;
 }
 
-button:hover {
-  transform: scale(1.05);
-  opacity: 1;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  height: fit-content;
-  width: fit-content;
-  margin: 10px;
-}
-
-a:hover {
-  opacity: 1;
-  text-decoration: none;
-}
-
-.Hello {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px 0;
+.header-button:hover {
+  background-color: #555; /* Change color on hover */
+  border-radius: 5px; /* Rounded edges on hover */
 }
